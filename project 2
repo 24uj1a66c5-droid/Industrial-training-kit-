@@ -1,0 +1,25 @@
+# Data Classification Using AI
+
+from sklearn.neighbors import KNeighborsClassifier
+
+# Sample data
+X = [
+    [20, 20000],
+    [25, 30000],
+    [30, 40000],
+    [35, 50000],
+    [40, 60000]
+]
+
+y = ["Low", "Low", "Medium", "High", "High"]
+
+# Create model
+model = KNeighborsClassifier(n_neighbors=1)
+
+# Train model
+model.fit(X, y)
+
+# Predict new data
+prediction = model.predict([[28, 35000]])
+
+print("Predicted Class:", prediction[0])
